@@ -27,16 +27,15 @@
   <body>
     <article class="prod-card">
       <picture>
-        <img
-          class="img-mobile"
-          alt="perfume photo"
-          src="./images/image-product-mobile.jpg"
+        <source
+          media="(max-width:600px)"
+          srcset="images/image-product-mobile.jpg"
         />
-        <img
-          class="img-desktop"
-          alt="perfume photo"
-          src="./images/image-product-desktop.jpg"
+        <source
+          media="(min-width:600px)"
+          srcset="images/image-product-desktop.jpg"
         />
+        <img src="images/image-product-mobile.jpg" alt="Product" />
       </picture>
       <div class="prod-content">
         <p class="prod-category">Perfume</p>
