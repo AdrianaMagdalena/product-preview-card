@@ -13,12 +13,10 @@ font-family: 'Montserrat', sans-serif; */
 * {
   margin: 0;
 }
-
 html,
 body {
   height: 100%;
 }
-
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -55,11 +53,9 @@ body {
   color: hsl(228, 12%, 48%);
   background-color: hsl(30, 38%, 92%);
   display: grid;
+  padding: 1rem;
   place-content: center;
-  margin: 1rem;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .img-desktop {
