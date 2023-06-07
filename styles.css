@@ -1,125 +1,145 @@
 /* font-family: 'Fraunces', serif;
 font-family: 'Montserrat', sans-serif; */
 
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
 }
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* end of CSS Reset */
 
 body {
-  width: 100vw;
-  height: 100dvh;
-  background-color: hsl(30, 38%, 92%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 100px;
-}
-
-.wrapper {
-  width: min(100%, 350px);
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.photo {
-  background-image: url(./images/image-product-mobile.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 250px;
-  width: auto;
-}
-
-.text {
-  padding: 1.5rem 2rem;
-}
-
-.text > * {
-  margin-bottom: 1rem;
-}
-
-.text:last-child {
-  margin-bottom: 0;
-}
-
-p {
+  min-height: 100%;
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   color: hsl(228, 12%, 48%);
+  background-color: hsl(30, 38%, 92%);
+  display: grid;
+  place-content: center;
+  margin: 1rem;
 }
 
-.uppercase {
-  text-transform: capitalize;
+.img-desktop {
+  display: none;
 }
 
-.strike-price {
-  text-decoration: line-through;
+.prod-card {
+  max-width: 600px;
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: grid;
 }
 
-h1 {
-  font-family: "Fraunces", serif;
+.prod-content {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.prod-category {
+  text-transform: uppercase;
+  letter-spacing: 0.75ch;
+  font-size: 0.8125rem;
 }
 
 .prod-name {
   color: hsl(212, 21%, 14%);
 }
 
+h1,
+.current-price {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
 .current-price {
   color: hsl(158, 36%, 37%);
 }
 
-.price {
+.flex-group {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
 .button {
   display: flex;
+  gap: 0.5rem;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  max-width: 100%;
+  border: 0;
   padding: 1em;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background-color: hsl(158, 36%, 37%);
-}
-
-.button p {
   font-weight: 700;
   color: white;
 }
+
 .button:hover,
 .button:focus {
-  background-color: hsl(158, 36%, 19%);
+  background-color: hsl(158, 36%, 27%);
 }
 
-@media screen and (min-width: 1440px) {
-  .wrapper {
-    width: min(100%, 600px);
-    height: 450px;
-    display: flex;
+@media screen and (min-width: 600px) {
+  .prod-card {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .photo {
-    background-image: url(./images/image-product-desktop.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 50%;
+  .prod-content {
+    padding: 1.5rem 2rem;
   }
-  .text {
-    width: 50%;
-    padding: 1.9rem;
+
+  .img-desktop {
+    display: block;
   }
-  .text > * {
-    margin-bottom: 1.4rem;
+
+  .img-mobile {
+    display: none;
   }
+}
+
+footer {
+  display: none;
 }
