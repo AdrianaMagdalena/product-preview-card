@@ -72,14 +72,15 @@ body {
 
 .prod-content {
   padding: 1.5rem;
-  display: grid;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .prod-category {
   text-transform: uppercase;
   letter-spacing: 0.75ch;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
 }
 
 .prod-name {
@@ -105,6 +106,7 @@ h1,
 }
 
 .button {
+  width: 100%;
   display: flex;
   gap: 0.5rem;
   justify-content: center;
@@ -115,6 +117,7 @@ h1,
   background-color: hsl(158, 36%, 37%);
   font-weight: 700;
   color: white;
+  align-self: center;
 }
 
 .button:hover,
@@ -128,7 +131,7 @@ h1,
   }
 
   .prod-content {
-    padding: 1.5rem 2rem;
+    justify-content: space-between;
   }
 
   .img-desktop {
